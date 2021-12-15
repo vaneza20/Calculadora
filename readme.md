@@ -1,7 +1,7 @@
 # MyCalc
 Calculadora simples criada com *HTML,* *CSS,* and *JS* Puro (Vanilla JS)
 
-![Output Snip](./assets/output.gif "This will be the final output")
+![Output Snip](https://github.com/karankumar-js/Simple-Calculator/blob/master/assets/output.gif "Resultado esperado")
 
 
 
