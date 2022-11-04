@@ -34,8 +34,9 @@ buttons.forEach((btn) => {
 
             // Executar e mostrar a resposta em tempo real
             if (btn.classList.contains('num_btn')) {
-
-                answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
+                var resutado = realTimeScreenValue.join('')
+                const valor = Function("return " + resutado)();
+                answerScreen.innerHTML = valor///eval(realTimeScreenValue.join(''));
 
             }
 
@@ -44,8 +45,10 @@ buttons.forEach((btn) => {
         // Quando o evento for um botão
         if (btn.id.match('erase')) {
             realTimeScreenValue.pop();
+            var operacoes = realTimeScreenValue.join('')
+            const resultado = Function("return " + operacoes)();
             currentInput.innerHTML = realTimeScreenValue.join('');
-            answerScreen.innerHTML = eval(realTimeScreenValue.join(''));
+            answerScreen.innerHTML = resultado// eval(realTimeScreenValue.join(''));
         }
 
         // Ao clicar em igual
@@ -53,10 +56,15 @@ buttons.forEach((btn) => {
             currentInput.className = 'answerScreen';
             answerScreen.className = 'currentInput';
             answerScreen.style.color = "white";
+           
         }
 
         // Previnir erro de undefined
-        if (typeof eval(realTimeScreenValue.join('')) == 'undefined') {
+        // console.log("bbb",realTimeScreenValue.join('') == 'undefined');
+        var userInput2 = realTimeScreenValue.join('')
+        const calcular = Function("return " + userInput2)();
+        var resutado = calcular;
+        if (typeof resutado == 'undefined') {
             answerScreen.innerHTML = 0
         }
 
